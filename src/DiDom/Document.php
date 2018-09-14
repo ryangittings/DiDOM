@@ -336,7 +336,13 @@ class Document
         }
 
         try {
-            $content = file_get_contents($filename);
+            $ch = curl_init();
+            $timeout = 30;
+            curl_setopt($ch,CURLOPT_URL, $filename);
+            curl_setopt($ch,CURLOPT_RETURNTRANSFER, 1);
+            curl_setopt($ch,CURLOPT_CONNECTTIMEOUT, $timeout);
+            $content = curl_exec($ch);
+            curl_close($ch);
         } catch (\Exception $exception) {
             throw new RuntimeException(sprintf('Could not load file %s', $filename));
         }

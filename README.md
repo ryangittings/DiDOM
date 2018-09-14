@@ -1,12 +1,4 @@
 # DiDOM
-
-[![Build Status](https://codeship.com/projects/cf938980-36f0-0134-119e-36dc468776c7/status?branch=master)](https://codeship.com/projects/165662)
-[![Total Downloads](https://poser.pugx.org/imangazaliev/didom/downloads)](https://packagist.org/packages/imangazaliev/didom)
-[![Latest Stable Version](https://poser.pugx.org/imangazaliev/didom/v/stable)](https://packagist.org/packages/imangazaliev/didom)
-[![License](https://poser.pugx.org/imangazaliev/didom/license)](https://packagist.org/packages/imangazaliev/didom)
-
-[README на русском](README-RU.md)
-
 DiDOM - simple and fast HTML parser.
 
 ## Contents
@@ -63,9 +55,6 @@ DiDom allows to load HTML in several ways:
 // the first parameter is a string with HTML
 $document = new Document($html);
 
-// file path
-$document = new Document('page.html', true);
-
 // or URL
 $document = new Document('http://www.example.com/', true);
 ```
@@ -78,8 +67,6 @@ The second parameter specifies if you need to load file. Default is `false`.
 $document = new Document();
 
 $document->loadHtml($html);
-
-$document->loadHtmlFile('page.html');
 
 $document->loadHtmlFile('http://www.example.com/');
 ```
