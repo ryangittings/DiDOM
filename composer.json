@@ -1,14 +1,14 @@
 {
-    "name": "imangazaliev/didom",
+    "name": "ryangittings/didom",
     "description": "Simple and fast HTML parser",
     "type": "library",
     "keywords": ["didom", "parser", "html", "xml"],
     "license": "MIT",
-    "homepage": "https://github.com/Imangazaliev/DiDOM",
+    "homepage": "https://github.com/ryangittings/DiDOM",
     "authors": [
         {
-            "name": "Imangazaliev Muhammad",
-            "email": "imangazalievm@gmail.com"
+            "name": "Ryan Gittings",
+            "email": "ryan@madebykingfisher.co.uk"
         }
     ],
     "require": {
