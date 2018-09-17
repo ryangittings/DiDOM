@@ -336,13 +336,11 @@ class Document
         }
 
         try {
-            $ch = curl_init();
-            $timeout = 30;
-            curl_setopt($ch,CURLOPT_URL, $filename);
-            curl_setopt($ch,CURLOPT_RETURNTRANSFER, 1);
-            curl_setopt($ch,CURLOPT_CONNECTTIMEOUT, $timeout);
-            $content = curl_exec($ch);
-            curl_close($ch);
+            $client = new \Guzzle\Service\Client($filename);
+            $request = $client->get();
+
+            $response = $request->send();
+            $content = (string) $response->getBody();
         } catch (\Exception $exception) {
             throw new RuntimeException(sprintf('Could not load file %s', $filename));
         }
