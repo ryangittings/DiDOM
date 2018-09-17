@@ -336,10 +336,8 @@ class Document
         }
 
         try {
-            $client = new \Guzzle\Service\Client($filename);
-            $request = $client->get();
-
-            $response = $request->send();
+            $client = new \GuzzleHttp\Client();
+            $response = $client->request('GET', $filename);
             $content = (string) $response->getBody();
         } catch (\Exception $exception) {
             throw new RuntimeException(sprintf('Could not load file %s', $filename));
