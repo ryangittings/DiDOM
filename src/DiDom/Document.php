@@ -340,11 +340,11 @@ class Document
             $response = $client->request('GET', $filename);
             $content = (string) $response->getBody();
         } catch (\Exception $exception) {
-            throw new RuntimeException(sprintf('Could not load file %s', $filename));
+            throw new RuntimeException($exception->getMessage());
         }
 
         if ($content === false) {
-            throw new RuntimeException(sprintf('Could not load file %s', $filename));
+            throw new RuntimeException(sprintf('Could not load %s', $filename));
         }
 
         return $content;
